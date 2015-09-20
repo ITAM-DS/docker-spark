@@ -1,0 +1,11 @@
+jupyter
+pandas
+luigi
+numpy
+bokeh
+matplotlib
+scipy
+seaborn
+scikit-learn
+awscli
+Flask
