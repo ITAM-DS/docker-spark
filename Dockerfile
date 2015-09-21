@@ -1,6 +1,6 @@
 # Version: 0.1
 
-FROM docker-base
+FROM nanounanue/docker-base
 MAINTAINER Adolfo De Unánue Tiscareño "adolfo.deunanue@itam.mx"
 
 ENV REFRESHED_AT 2015-09-15
