@@ -1,6 +1,6 @@
 # Version: 0.1
 
-FROM nanounanue/docker-base
+FROM docker-base
 MAINTAINER Adolfo De Unánue Tiscareño "adolfo.deunanue@itam.mx"
 
 ENV REFRESHED_AT 2015-09-15
@@ -92,6 +92,10 @@ ENV PYSPARK_DRIVER_PYTHON ipython3
 RUN ipython profile create pyspark
 COPY 00-pyspark-setup.py /home/$ITAM_USER/.ipython/profile_pyspark/startup/
 
+
+## Descargamos los jars para leer fácilmente los archivos csv
+RUN wget http://search.maven.org/remotecontent\?filepath\=com/databricks/spark-csv_2.11/1.2.0/spark-csv_2.11-1.2.0.jar -O spark-csv_2.11-1.2.0.jar
+RUN wget http://search.maven.org/remotecontent\?filepath\=org/apache/commons/commons-csv/1.2/commons-csv-1.2.jar -O commons-csv-1.2.jar
 
 ## Abrimos el puerto del notebook
 EXPOSE 8888 7077
